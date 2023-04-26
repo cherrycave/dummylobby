@@ -5,17 +5,29 @@ plugins {
     id("xyz.jpenilla.run-paper") version "2.1.0"
 }
 
-group = "org.example"
+group = "net.cherrycave"
 version = "0.1.0"
 
 repositories {
     mavenCentral()
+
+    maven {
+        url = uri("https://maven.stckoverflw.net/private")
+
+        credentials {
+            username = "stckoverflw"
+            password = "O3OJSlysptIRrNyLQoIODQ8WJdaxOrCYYVo0X7bu3yeY8FnRP5iemu4gju87f4aC"
+        }
+    }
 }
 
 dependencies {
     paperweight.paperDevBundle("1.19.4-R0.1-SNAPSHOT")
 
     implementation("net.axay:kspigot:1.19.2")
+    compileOnly("net.luckperms:api:5.4")
+
+    implementation("net.cherrycave:birgid:0.2.0")
 }
 
 val javaVersion = 17

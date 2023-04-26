@@ -1,9 +1,18 @@
 api-version: '1.19'
-
-# Change all of these to your plugin's information
-name: ExamplePlugin
+name: DummyLobby
 version: '0.1.0'
-main: org.example.plugin.ExamplePlugin
-loader: org.example.plugin.ExamplePluginLoader
+main: net.cherrycave.dummylobby.DummyLobbyPlugin
+loader: net.cherrycave.dummylobby.DummyLobbyPluginLoader
 description: Paper Example Plugin
-authors: [You, Me]
+authors: ["StckOverflw"]
+
+has-open-classloader: true
+
+load-after:
+  - name: LuckPerms
+    bootstrap: true
+
+dependencies:
+  - name: LuckPerms
+    required: true
+    bootstrap: true
